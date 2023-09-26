@@ -4,6 +4,9 @@
     line-height: 1.4rem;
     color: #222;
 }
+.btn {
+    padding: 10px 20px;
+}
 body {
     margin: 0 auto;
     padding: 0;
@@ -41,6 +44,10 @@ a {
     display: flex;
     gap: 10px;
 }
+.active {
+    font-weight: 700;
+    color: #000;
+} 
 .container {
     width: 100%;
 }
@@ -53,4 +60,9 @@ a {
 }
 .navigation ul li {
     margin: 0 30px;
+}
+.content-container {
+    margin: 20px 0;
+    display: grid;
+    place-items: center;
 }
