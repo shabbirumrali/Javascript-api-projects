@@ -66,3 +66,11 @@ a {
     display: grid;
     place-items: center;
 }
+
+/* Module 2 */
+.map {
+    height: 180px;
+}
+#issMap {
+    height: 400px;
+}
