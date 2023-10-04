@@ -6,6 +6,16 @@
     <title>Document</title>
 </head>
 <body>
+    <script>
+        if('geolocation' in navigator) {
+            console.log('location available', navigator)
+            navigator.geolocation.getCurrentPosition((position) => {
+                console.log(position);
+            })
+        } else {
+            console.log('location not available')
+        }
+    </script>
     <h1>Hello World!</h1>
 </body>
 </html>
