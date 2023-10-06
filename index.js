@@ -1,5 +1,6 @@
 const express = require('express');
 const Datastore = require('nedb');
+const fetch = require('node-fetch');
 
 const app = express();
 
@@ -28,3 +29,9 @@ app.post('/api', (request, response) => {
     database.insert(data);
     response.json(data);
 });
+
+app.get('/weather', async (request, response) => {
+    const weather_response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=22.7195687&lon=75.8577258&appid=f46dd63eb43eb352210709170cc08a57`);
+    const weather_json = await weather_response.json();
+    response.json(weather_json);
+})

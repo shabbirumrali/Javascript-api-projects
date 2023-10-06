@@ -30,12 +30,13 @@ function getData(image64) {
     }
 }
 function setup() {
-    noCanvas();
-    const video = createCapture(VIDEO);
-    video.size(320, 240);
+    // noCanvas();
+    // const video = createCapture(VIDEO);
+    // video.size(320, 240);
     btn.addEventListener('click', (event) => {
-        video.loadPixels();
-        const image64 = video.canvas.toDataURL();
-        getData(image64);
+        // video.loadPixels();
+        // const image64 = video.canvas.toDataURL();
+        // getData(image64);
+        getData();
     })
 }
