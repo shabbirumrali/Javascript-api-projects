@@ -1,9 +1,9 @@
 const btn = document.querySelector('#btn_data');
 const div = document.getElementById('append_data');
 
-btn.addEventListener('click', () => {
-    fetchData();
-    fetchWeather();
+btn.addEventListener('click', async () => {
+    const data = await fetchData();
+    fetchWeather(data);
 })
 
 async function fetchData() {
@@ -26,9 +26,13 @@ async function fetchData() {
         p.append(loc, date);
         div.append(p);
     }
+    return json;
 }
-async function fetchWeather() {
-    const response = await fetch('/weather');
+async function fetchWeather(data) {
+    const {lat, lon} = data[0];
+
+    const response = await fetch(`/weather/${lat}, ${lon}`);
     const json = await response.json();
-    console.log("weather data", json);
+
+    console.log("receiving data from server", json)
 } 
